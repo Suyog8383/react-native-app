@@ -15,6 +15,7 @@ async function onMessageReceived(message) {
 
 messaging().onMessage(onMessageReceived);
 messaging().setBackgroundMessageHandler(onMessageReceived);
+messaging().getInitialNotification(onMessageReceived);
 
 import {name as appName} from './app.json';
 

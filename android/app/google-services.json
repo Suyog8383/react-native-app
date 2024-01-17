@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "698384892639",
-    "project_id": "dummy-68aff",
-    "storage_bucket": "dummy-68aff.appspot.com"
+    "project_number": "79480774176",
+    "project_id": "casino-3a04f",
+    "storage_bucket": "casino-3a04f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:698384892639:android:f5677dcee368f238f45f6a",
+        "mobilesdk_app_id": "1:79480774176:android:07463c2cc5e901bef82645",
         "android_client_info": {
           "package_name": "com.awesomeproject"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBLdbolNXF1_KNVIVeq-0tUQXgv8Cn9fl4"
+          "current_key": "AIzaSyBAQgGFt3ZxHf6XZxbbgWlb-B7WSrgNB_Q"
         }
       ],
       "services": {

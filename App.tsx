@@ -13,9 +13,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 import TouchID from 'react-native-touch-id';
 import {BackHandler, Text} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 
 // create a component
 const App = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 1500);
+  }, []);
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
