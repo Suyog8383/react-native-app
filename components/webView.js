@@ -1,30 +1,38 @@
 /* eslint-disable prettier/prettier */
 //import liraries
 import React, {useEffect, useRef, useState} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Alert,
-  BackHandler,
-  ActivityIndicator,
-  ScrollView,
-  RefreshControl,
-  PanResponder,
-} from 'react-native';
+import {Alert, BackHandler} from 'react-native';
 import {WebView} from 'react-native-webview';
-import NetInfo from '@react-native-community/netinfo';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import TouchID from 'react-native-touch-id';
+import messaging from '@react-native-firebase/messaging';
 
 // create a component
 const WebViewComponent = ({navigation}) => {
   const webViewRef = useRef(null);
   const [currentUrl, setCurrentUrl] = useState('');
-  const [refreshing, setRefreshing] = useState(false);
   const [auth, setAuth] = useState(false);
 
   const url = 'https://www.google.com/';
+
+  //get firebase token start
+  const getFirebaseToken = async () => {
+    const token = await messaging().getToken();
+    console.log('@SN token', token);
+  };
+  useEffect(() => {
+    getFirebaseToken();
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+    });
+
+    return unsubscribe;
+  }, []);
+
+  //get firebase token end
 
   //biomatric handler start
   useEffect(() => {
